@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.masonk.repositorysearch"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.masonk.repositorysearch"
@@ -33,6 +33,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -45,4 +49,10 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // Retrofit
+    implementation ("com.squareup.retrofit2:retrofit:2.11.0")
+
+    // GSON Converter
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
 }
